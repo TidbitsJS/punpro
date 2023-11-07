@@ -5,13 +5,13 @@ function sayHello() {
     console.log("Hello from PunPro")
 }
 
-// generateCurriculumStructure()
-//     .then((curriculumStructure) => {
-//         console.log(JSON.stringify(curriculumStructure, null, 2));
-//     })
-//     .catch((error) => {
-//         console.error(`Error: ${error}`);
-//     });
+generateCurriculumStructure()
+    .then((curriculumStructure) => {
+        console.log(JSON.stringify(curriculumStructure, null, 2));
+    })
+    .catch((error) => {
+        console.error(`Error: ${error}`);
+    });
 
 // Example usage: Replace 'section-slug' and 'lecture-slug' with the actual slugs
 // const sectionSlug = '001_getting-started';

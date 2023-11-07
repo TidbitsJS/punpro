@@ -47,11 +47,11 @@ export async function generateCurriculumStructure() {
         curriculum.push(sectionInfo);
     }
 
-    const contentDirectories = await fs.readdir("./content", { withFileTypes: true });
+    const contentDirectories = await fs.readdir("content", { withFileTypes: true });
     for (const directory of contentDirectories) {
         if (directory.isDirectory()) {
             const directoryName = directory.name;
-            const directoryPath = path.join("./content", directoryName);
+            const directoryPath = path.join("content", directoryName);
             await processDirectory(directoryName, directoryPath);
         }
     }
