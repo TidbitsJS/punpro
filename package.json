@@ -1,0 +1,26 @@
+{
+  "name": "punpro",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "The PunPro Course",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm publish"
+  },
+  "author": "Tidbits JS",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TidbitsJS/punpro.git"
+  },
+  "homepage": "https://github.com/TidbitsJS/punpro",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "nodemon": "^3.0.1"
+  },
+  "publishConfig": {
+    "@tidbits.js:registry": "https://npm.pkg.github.com"
+  }
+}
