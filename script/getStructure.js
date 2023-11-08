@@ -47,11 +47,15 @@ export async function generateCurriculumStructure() {
         curriculum.push(sectionInfo);
     }
 
-    const contentDirectories = await fs.readdir("content", { withFileTypes: true });
+    // Determine the content directory path based on the current module's location
+    const currentModulePath = new URL(import.meta.url).pathname;
+    const contentDirectoryPath = path.join(path.dirname(currentModulePath), 'content');
+
+    const contentDirectories = await fs.readdir(contentDirectoryPath, { withFileTypes: true });
     for (const directory of contentDirectories) {
         if (directory.isDirectory()) {
             const directoryName = directory.name;
-            const directoryPath = path.join("content", directoryName);
+            const directoryPath = path.join(contentDirectoryPath, directoryName);
             await processDirectory(directoryName, directoryPath);
         }
     }
